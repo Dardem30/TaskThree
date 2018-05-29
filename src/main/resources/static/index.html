@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var xhr = new XMLHttpRequest();
+        function clickMe() {
+            var name=document.getElementById("name").value;
+            xhr.open('GET', " http://localhost:8080/answer/"+name,false);
+            xhr.send();
+            document.getElementById("par").innerHTML=xhr.responseText;
+        }
+    </script>
+</head>
+<body>
+<input type="text" id="name">
+<button onclick="clickMe()">ok</button>
+<p id="par"></p>
+</body>
+</html>
