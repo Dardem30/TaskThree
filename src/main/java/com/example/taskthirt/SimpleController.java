@@ -11,11 +11,7 @@ public class SimpleController {
 
     @GetMapping(value = "/answer/{name}")
     public ResponseEntity<String> answerWhom(@PathVariable String name){
-        String str[]=name.split(" ");
-        String mess="";
-        for(int i=0;i<str.length;i++){
-            mess+=str[i]+" ";
-        }
-        return new ResponseEntity<String>("Привет,"+mess, HttpStatus.OK);
+
+        return new ResponseEntity<String>("Привет, "+name, HttpStatus.OK);
     }
 }
